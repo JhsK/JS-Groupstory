@@ -37,26 +37,27 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border-bottom: 1px solid black;
 }
 
 .nav__logo img {
-  height: 300px;
+  height: 200px;
 }
 
 .nav__ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 0.5rem;
 }
 
 .nav__ul__menu {
-  font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   padding: 0 2rem;
 }
 
 .nav__ul__search {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   padding: 0 2rem;
 }
 
@@ -64,6 +65,7 @@ header {
   margin-right: 1rem;
   border-radius: 15px;
   width: 200px;
+  height: 30px;
   border: 1px solid rgba(0, 0, 0, 0.4);
   outline: none;
 }
