@@ -73,3 +73,27 @@ header {
 .nav__ul__search i {
   opacity: 0.7;
 }
+
+@media only screen and (max-width: 1050px) {
+  .nav {
+    justify-content: space-between;
+  }
+  .nav__ul__menu {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  .nav__ul__search {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  header {
+    height: 250px;
+  }
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
