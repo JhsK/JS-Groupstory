@@ -1,3 +1,3 @@
 import "../CSS/reset.css";
-import "../CSS/style.css";
+import "../CSS/index.css";
 import "./topBtn";
