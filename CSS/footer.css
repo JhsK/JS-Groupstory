@@ -1,0 +1,19 @@
+footer {
+  width: 100%;
+  height: 100px;
+  margin-top: 3rem;
+}
+
+.footerContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerContainer li {
+  font-size: 0.8rem;
+  color: #a59c96;
+  padding: 0 2rem;
+}
