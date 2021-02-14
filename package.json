@@ -1,0 +1,30 @@
+{
+  "name": "JS-Groupstory",
+  "version": "1.0.0",
+  "description": "**설명 - Gropstory 프로젝트를 특별한 라이브러리, 프레임워크 없이 HTML + CSS + VanilaJS 를 이용해서 개발한다.**",
+  "main": "./src/JS/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "dev": "webpack serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JhsK/JS-Groupstory.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JhsK/JS-Groupstory/issues"
+  },
+  "homepage": "https://github.com/JhsK/JS-Groupstory#readme",
+  "devDependencies": {
+    "css-loader": "^5.0.2",
+    "html-webpack-plugin": "^5.1.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.21.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
