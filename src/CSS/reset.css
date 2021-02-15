@@ -86,6 +86,28 @@ pre {
 
 a {
   background-color: transparent;
+  all: unset;
+}
+
+a:link {
+  text-decoration: none;
+  color: #000;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #000;
+}
+
+a:active {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  text-decoration: none;
+  cursor: pointer;
+  color: #000;
 }
 
 /**
