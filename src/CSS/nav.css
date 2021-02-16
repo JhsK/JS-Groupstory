@@ -50,6 +50,16 @@ header {
   opacity: 0.7;
 }
 
+.mobileNav {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 2rem;
+  color: #aea1ea;
+  cursor: pointer;
+  display: none;
+}
+
 @media only screen and (max-width: 1050px) {
   .nav {
     justify-content: space-between;
@@ -68,5 +78,27 @@ header {
   .nav {
     flex-wrap: wrap;
     justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 645px) {
+  .nav__ul {
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(242, 223, 235, 0.5);
+    transition: 0.4s;
+  }
+  .nav__ul li {
+    transition: 0.2s;
+  }
+  .nav__ul__search {
+    display: none;
+  }
+  .mobileNav {
+    display: block;
   }
 }
