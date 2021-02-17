@@ -1,0 +1,57 @@
+body {
+  background-color: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link {
+  text-decoration: none;
+  color: #4b4c50;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #4b4c50;
+}
+
+a:active {
+  text-decoration: none;
+  color: #4b4c50;
+}
+
+a:hover {
+  text-decoration: none;
+  cursor: pointer;
+  color: #4b4c50;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  background-image: url("../image/HatchfulExport-All/pinterest_profile_image-removebg-preview (2).png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.nav-ul {
+  display: flex;
+  padding-top: 0.5em;
+  justify-content: space-around;
+  width: calc(100% - 150px);
+}
+
+.nav-item {
+  margin: 0 0.5rem;
+}
