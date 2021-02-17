@@ -55,3 +55,40 @@ a:hover {
 .nav-item {
   margin: 0 0.5rem;
 }
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1em;
+}
+
+.explain-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.explain-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 1rem;
+}
+
+.explain-text {
+  font-size: 0.8rem;
+  color: #707070;
+  margin-bottom: 1rem;
+}
+
+.explain-btn {
+  background-color: #762be8;
+  color: #fff;
+  padding: 1em;
+  font-size: 0.8rem;
+  width: 120px;
+  border-radius: 10px;
+  outline: none;
+}
