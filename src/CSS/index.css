@@ -223,17 +223,6 @@ section {
   height: 400px;
 }
 
-.topBtn {
-  position: fixed;
-  bottom: 30px;
-  right: 50px;
-}
-
-.topBtn__i {
-  font-size: 3rem;
-  cursor: pointer;
-}
-
 @media only screen and (max-width: 1050px) {
   body {
     padding-top: 170px;

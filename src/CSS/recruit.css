@@ -30,6 +30,7 @@ section {
   overflow-y: scroll;
   margin-left: 2rem;
   background-color: #e8edde;
+  flex-shrink: 0;
 }
 
 .selectBar {
@@ -67,8 +68,8 @@ hr {
   cursor: pointer;
 }
 
-article {
-  width: 100%;
+.section__content {
+  width: 1100px;
   height: 100%;
 }
 
@@ -78,6 +79,7 @@ article {
   display: flex;
   justify-content: flex-start;
   margin-left: 3rem;
+  flex-wrap: wrap;
 }
 
 .container__content {
