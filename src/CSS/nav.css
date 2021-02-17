@@ -60,6 +60,17 @@ header {
   display: none;
 }
 
+.topBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 50px;
+}
+
+.topBtn__i {
+  font-size: 3rem;
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 1050px) {
   .nav {
     justify-content: space-between;
