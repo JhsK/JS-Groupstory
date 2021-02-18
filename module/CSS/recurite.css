@@ -1,3 +1,8 @@
+.recurit-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .header {
   width: 100%;
   position: fixed;
@@ -39,4 +44,24 @@
   left: 10px;
   font-size: 2rem;
   cursor: pointer;
+}
+
+@media (min-width: 1020px) {
+  .aside {
+    width: 20%;
+    position: static;
+    display: block;
+    z-index: -1;
+  }
+  .recurit-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 1em;
+  }
+  .footer {
+    width: 100%;
+  }
+  .section {
+    width: 74%;
+  }
 }

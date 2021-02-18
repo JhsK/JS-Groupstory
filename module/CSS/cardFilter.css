@@ -46,7 +46,7 @@
 }
 
 .filter-container {
-  width: 250px;
+  width: 220px;
   background-color: #e8edde;
   color: #000;
 }
@@ -96,7 +96,7 @@ hr {
 }
 
 @media (min-width: 1000px) {
-  .card-item {
+  /* .card-item {
     width: 33.33333%;
-  }
+  } */
 }
