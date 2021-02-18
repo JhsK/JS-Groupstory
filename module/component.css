@@ -202,3 +202,27 @@ input::-webkit-search-results-decoration {
     height: 400px;
   }
 }
+
+@media (max-width: 450px) {
+  body {
+    padding-top: 260px;
+  }
+  .nav-container {
+    flex-direction: column;
+  }
+  .nav-ul {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+  }
+  .nav-item {
+    margin: 0.5rem 0;
+  }
+  .explain-title {
+    font-size: 1.5rem;
+  }
+  .explain-text {
+    font-size: 0.6rem;
+  }
+}
