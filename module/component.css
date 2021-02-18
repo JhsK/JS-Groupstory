@@ -101,6 +101,29 @@ a:hover {
 .explain-img {
 }
 
+.footer {
+  text-align: center;
+  padding: 1rem;
+}
+.footer-ul {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-item {
+  margin: 0 1em;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+.topBtn {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
 @media (min-width: 850px) {
   .content-container {
     flex-direction: row;
@@ -115,21 +138,6 @@ a:hover {
   .explain-c {
     padding-right: 3rem;
   }
-}
-
-.footer {
-  text-align: center;
-  padding: 1rem;
-}
-.footer-ul {
-  display: flex;
-  justify-content: center;
-}
-
-.footer-item {
-  margin: 0 1em;
-  font-size: 0.8rem;
-  opacity: 0.6;
 }
 
 @media (min-width: 1150px) {
