@@ -1,5 +1,6 @@
 body {
   background-color: #fff;
+  padding-top: 120px;
 }
 
 a {
@@ -33,6 +34,9 @@ a:hover {
   justify-content: space-between;
   padding: 1em;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  background-color: #fff;
 }
 
 .logo {
@@ -111,6 +115,21 @@ a:hover {
   .explain-c {
     padding-right: 3rem;
   }
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+}
+.footer-ul {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-item {
+  margin: 0 1em;
+  font-size: 0.8rem;
+  opacity: 0.6;
 }
 
 @media (min-width: 1150px) {
