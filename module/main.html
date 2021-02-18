@@ -33,7 +33,7 @@
                     <li class="nav-item"><a href="/recurit" class="nav-link">모집</a></li>
                     <li class="nav-item"><a href="/match" class="nav-link">매치업</a></li>
                     <li class="nav-item"><a href="/login" class="nav-link">회원가입/로그인</a></li>
-                    <li class="nav-item"><i class="fas fa-search"></i></li>
+                    <li class="nav-item" id="js-searchBtn"><i class="fas fa-search"></i></li>
                 </ul>
             </div>
         </header>
@@ -98,6 +98,16 @@
                 <img src="../image/Team work-amico.png" alt="explain" class="explain-img">
             </div>
         </section>
+
+        <!-- search modal -->
+        <div class="search">
+            <div class="search-container">
+                <form class="search-form">
+                    <input type="search" class="search-input" placeholder="동아리 · 소모임 이름, 분야, 관련학부를 검색해보세요">
+                    <img src="../image/close.png" alt="close" class="closeBtn">
+                </form>
+            </div>
+        </div>
         <!--footer-->
         <footer class="footer">
             <ul class="footer-ul">
@@ -111,6 +121,7 @@
         </div>
     </div>
     <script src="./JS/topBtn.js"></script>
+    <script src="./JS/search.js"></script>
 </body>
 
 </html>
