@@ -1,0 +1,63 @@
+.content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1em;
+  margin-bottom: 1rem;
+}
+
+.explain-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.explain-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 1rem;
+}
+
+.explain-text {
+  font-size: 0.8rem;
+  color: #707070;
+  margin-bottom: 1rem;
+}
+
+.explain-btn {
+  background-color: #762be8;
+  color: #fff;
+  padding: 1em;
+  font-size: 0.8rem;
+  width: 120px;
+  border-radius: 10px;
+  outline: none;
+}
+
+.explain-img {
+}
+
+@media (min-width: 850px) {
+  .content-container {
+    flex-direction: row;
+  }
+  .explain-img {
+    width: 360px;
+    height: 300px;
+  }
+  .explain-b {
+    padding-right: 4rem;
+  }
+  .explain-c {
+    padding-right: 3rem;
+  }
+}
+
+@media (min-width: 1150px) {
+  .explain-img {
+    width: 470px;
+    height: 400px;
+  }
+}
