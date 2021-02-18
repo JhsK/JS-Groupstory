@@ -1,0 +1,42 @@
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.aside {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: #b6bbac;
+}
+
+.filter-closeBtn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 4;
+  width: 16px;
+  height: 16px;
+  display: none;
+  cursor: pointer;
+}
+
+.section {
+  padding: 0 1em;
+}
+
+.hambergerBtn {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  font-size: 2rem;
+  cursor: pointer;
+}
