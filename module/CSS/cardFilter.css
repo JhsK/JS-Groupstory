@@ -46,7 +46,7 @@
 }
 
 .filter-container {
-  width: 220px;
+  width: 200px;
   background-color: #e8edde;
   color: #000;
 }
@@ -95,8 +95,14 @@ hr {
   }
 }
 
-@media (min-width: 1000px) {
-  /* .card-item {
+@media (min-width: 1300px) {
+  .card-item {
     width: 33.33333%;
-  } */
+  }
+}
+
+@media (min-width: 1600px) {
+  .card-item {
+    width: 25%;
+  }
 }
