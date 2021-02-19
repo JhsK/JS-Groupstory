@@ -50,7 +50,7 @@
   .aside {
     width: 200px;
     position: static;
-    display: block;
+    display: block !important;
     z-index: 0;
   }
   .recurit-container {
