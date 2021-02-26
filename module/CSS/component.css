@@ -56,6 +56,7 @@ a:hover {
 
 .nav-item {
   margin: 0 0.5rem;
+  cursor: pointer;
 }
 
 .nav-item:nth-child(4) {
