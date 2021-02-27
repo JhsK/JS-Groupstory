@@ -1,43 +1,4 @@
-<!DOCTYPE html>
-<html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Groupstory</title>
-
-    <meta name="description" content="Groupstory 모임 찾기 웹 사이트"> <!-- 사이트 설명 -->
-    <meta name="keywords" content="동아리, 소모임, 대학, 대학교, 모임"> <!-- 사이트 키워드로 검색엔진을 위해  사용-->
-    <meta name="author" content="JhsK">
-
-    <link rel="icon" href="../image/HatchfulExport-All/favicon.png" />
-    <link rel="apple-touch-icon" href="../image/HatchfulExport-All/favicon.png" />
-    <link rel="shortcut icon" tyle="image/x-icon" href="../image/HatchfulExport-All/favicon.png" />
-
-    <link rel="stylesheet" href="./CSS/reset.css">
-    <script src="https://kit.fontawesome.com/c74aba1045.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./CSS/component.css">
-    <link rel="stylesheet" href="./CSS/cardFilter.css">
-    <link rel="stylesheet" href="./CSS/recurite.css">
-</head>
-
-<body>
     <div class="recurit-container">
-        <!-- nav -->
-        <header class="header">
-            <div class="nav-container">
-                <figure class="logo"><a href="./main.html"></a></figure>
-                <ul class="nav-ul">
-                    <li class="nav-item"><a href="/recurit" class="nav-link">모집</a></li>
-                    <li class="nav-item"><a href="/match" class="nav-link">매치업</a></li>
-                    <li class="nav-item"><a href="/login" class="nav-link">회원가입/로그인</a></li>
-                    <li class="nav-item" id="js-searchBtn"><i class="fas fa-search"></i></li>
-                </ul>
-            </div>
-        </header>
         <!-- filter-->
         <aside class="aside">
             <div class="filter-container">
@@ -242,35 +203,8 @@
         
             </ul>
         </section>
-        <!-- search modal-->
-        <div class="search">
-            <div class="search-container">
-                <form class="search-form">
-                    <input type="search" class="search-input" placeholder="동아리 · 소모임 이름, 분야, 관련학부를 검색해보세요">
-                    <img src="../image/close.png" alt="close" class="closeBtn">
-                </form>
-            </div>
-        </div>
-        <div class="topBtn">
-            <i class="far fa-arrow-alt-circle-up"></i>
-        </div>
         <div class="hambergerBtn">
             <i class="fas fa-bars"></i>
         </div>
 
     </div>
-    <!-- footer -->
-    <footer class="footer">
-        <ul class="footer-ul">
-            <li class="footer-item">이용안내</li>
-            <li class="footer-item">문의하기</li>
-            <li class="footer-item">© Groupstory</li>
-        </ul>
-    </footer>
-    <script src="./JS/filter.js"></script>
-    <script src="./JS/search.js"></script>
-    <script src="./JS/topBtn.js"></script>
-    <script src="./JS/hambergerBtn.js"></script>
-</body>
-
-</html>

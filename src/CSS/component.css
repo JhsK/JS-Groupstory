@@ -28,6 +28,14 @@ a:hover {
   color: #4b4c50;
 }
 
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
 .nav-container {
   display: flex;
   align-items: center;
@@ -132,12 +140,12 @@ input::-webkit-search-results-decoration {
 }
 
 .closeBtn {
-  width: 15px;
-  height: 15px;
+  /* width: 15px;
+  height: 15px; */
   position: absolute;
   right: 50px;
   top: 33px;
-  opacity: 0.3;
+  opacity: 0.5;
   cursor: pointer;
 }
 
