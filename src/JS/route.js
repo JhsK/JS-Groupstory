@@ -36,6 +36,7 @@ const historyRouterPush = (pathName) => {
     import("./hambergerBtn");
     import("./filter");
     renderHTML(recuritHTML);
+    import("./api");
   }
 };
 
