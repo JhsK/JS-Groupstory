@@ -1,6 +1,6 @@
 (self["webpackChunkJS_Groupstory"] = self["webpackChunkJS_Groupstory"] || []).push([[1],{
 
-/***/ 27:
+/***/ 26:
 /***/ (() => {
 
 const hambergerBtn = document.querySelector(".hambergerBtn");

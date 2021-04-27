@@ -1,6 +1,6 @@
 (self["webpackChunkJS_Groupstory"] = self["webpackChunkJS_Groupstory"] || []).push([[2],{
 
-/***/ 28:
+/***/ 27:
 /***/ (() => {
 
 const filterBtn = document.querySelectorAll("#js-filterBtn");

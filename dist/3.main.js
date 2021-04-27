@@ -1,6 +1,6 @@
 (self["webpackChunkJS_Groupstory"] = self["webpackChunkJS_Groupstory"] || []).push([[3],{
 
-/***/ 29:
+/***/ 28:
 /***/ (() => {
 
 const sectionHTML = document.querySelector(".section");
