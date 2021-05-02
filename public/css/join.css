@@ -1,0 +1,57 @@
+.join {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.joinFormContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0.7rem;
+  width: 400px;
+}
+
+.joinForm {
+  display: flex;
+  flex-direction: column;
+  background-color: #f3f2f2;
+  padding: 3rem 0;
+  align-items: center;
+}
+
+.joinForm img {
+  margin-bottom: 2rem;
+  width: 50%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form span {
+  margin-bottom: 0.5rem;
+}
+
+form input {
+  padding: 0.5rem 0.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 5px;
+  border: 1px solid #c4cfd6;
+}
+
+form select {
+  margin-bottom: 2rem;
+}
+
+form button {
+  padding: 0.7rem 0.5rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #762be8;
+  color: #fff;
+  cursor: pointer;
+}

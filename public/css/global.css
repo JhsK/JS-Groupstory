@@ -1,0 +1,101 @@
+.joinLink {
+  background-color: #f3f2f2;
+  margin-top: 2rem;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.joinLink span {
+  margin: 0 0.3rem;
+}
+
+footer {
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+  transform: translateX(-50%);
+  line-height: 2rem;
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
+header {
+  width: 100%;
+  padding: 1rem 0;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.inner {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.searchBtn {
+  cursor: pointer;
+  color: #afb0af;
+}
+
+.navContainer img {
+  width: 200px;
+  transform: translateY(-5%);
+}
+
+ul {
+  display: flex;
+  align-items: center;
+}
+
+li {
+  margin-left: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.searchSection {
+  width: 100%;
+  height: 120px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: #fff;
+  border-bottom: 1px solid #afb0af;
+  display: none;
+}
+
+.searchForm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.searchForm input {
+  width: 600px;
+  padding: 1rem 3rem;
+  border-radius: 40px;
+  outline: none;
+  border: 1px solid #762be8;
+}
+
+.searchPlace {
+  position: relative;
+  top: 2px;
+  left: 60px;
+  opacity: 0.7;
+}
+
+.searchClose {
+  position: relative;
+  top: 2px;
+  left: 680px;
+  cursor: pointer;
+}

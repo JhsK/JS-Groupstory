@@ -1,0 +1,77 @@
+.email {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.emailFormContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0.7rem;
+  width: 400px;
+}
+
+.emailForm {
+  display: flex;
+  flex-direction: column;
+  background-color: #f3f2f2;
+  padding: 3rem 0;
+  align-items: center;
+}
+
+.emailForm img {
+  margin-bottom: 2rem;
+  width: 50%;
+}
+
+.emailInfo {
+  padding: 0 1rem;
+  line-height: 20px;
+  margin-bottom: 2rem;
+}
+
+form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.formSpan {
+  font-size: 0.9rem;
+  margin-bottom: 0.7rem;
+}
+
+.emailSend {
+  margin-bottom: 5rem;
+}
+
+.emailSend input {
+  background-color: #f3f2f2;
+  border: none;
+  border-bottom: 1px solid #000;
+  outline: none;
+}
+
+.emailSend button {
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.emailAuth input {
+  padding: 0.5rem 0.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 5px;
+  border: 1px solid #c4cfd6;
+}
+
+.emailAuth button {
+  padding: 0.7rem 0.5rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #762be8;
+  color: #fff;
+  cursor: pointer;
+}
