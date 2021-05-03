@@ -31,7 +31,7 @@ app.use(
 );
 
 app.use("/", indexRouter);
-app.use("/user", userRouter);
+app.use("/main", userRouter);
 
 // app.get("/", (req, res) => {
 //   // res.send("Hello, Express");
