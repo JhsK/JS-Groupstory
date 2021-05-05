@@ -3,6 +3,7 @@ const passport = require("passport");
 const bcrypt = require("bcrypt");
 const { isLoggedIn, isNotLoggedIn } = require("./middlewares");
 const User = require("../models/user");
+const Regist = require("../models/regist");
 
 const router = express.Router();
 
@@ -49,6 +50,34 @@ router.get("/logout", isLoggedIn, (req, res) => {
   req.logout();
   req.session.destroy();
   res.redirect("/");
+});
+
+router.post("/request", isLoggedIn, async (req, res, next) => {
+  const {
+    Regist_name,
+    Regist_vicerepcon,
+    Regist_repcon,
+    Regist_member,
+    Regist_info,
+  } = req.body;
+  try {
+    const exRegist = await Regist.findOne({ where: { Regist_name } });
+    if (exRegist) {
+      return res.redirect("/request?error=exist");
+    }
+    await Regist.create({
+      Regist_name,
+      Regist_vicerepcon,
+      Regist_repcon,
+      Regist_member,
+      Regist_info,
+      Regist_enroll: "검토중",
+    });
+    return res.redirect("/");
+  } catch (error) {
+    console.error(error);
+    return next(error);
+  }
 });
 
 module.exports = router;

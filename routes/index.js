@@ -17,4 +17,8 @@ router.get("/join", isNotLoggedIn, (req, res) => {
   res.sendFile(path.join(__dirname, "../html/join.html"));
 });
 
+router.get("/request", isLoggedIn, (req, res) => {
+  res.sendFile(path.join(__dirname, "../html/requestForm.html"));
+});
+
 module.exports = router;
