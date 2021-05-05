@@ -4,30 +4,30 @@ module.exports = class User extends Sequelize.Model {
   static init(sequelize) {
     return super.init(
       {
-        id: {
+        User_id: {
           type: Sequelize.STRING(30),
           allowNull: false,
           primaryKey: true,
         },
-        name: {
+        User_name: {
           type: Sequelize.STRING(20),
           allowNull: false,
         },
-        pw: {
+        User_pw: {
           type: Sequelize.STRING(100),
           allowNull: false,
         },
-        email: {
+        User_email: {
           type: Sequelize.STRING(40),
           unique: true,
           // allowNull: false,
           allowNull: true,
         },
-        power: {
+        User_power: {
           type: Sequelize.BOOLEAN,
           allowNull: true,
         },
-        dept: {
+        User_dept: {
           type: Sequelize.STRING(20),
           allowNull: false,
         },
