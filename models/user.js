@@ -44,5 +44,7 @@ module.exports = class User extends Sequelize.Model {
       }
     );
   }
-  static associate(db) {}
+  static associate(db) {
+    db.User.hasOne(db.Regist, { foreignKey: "User_id", sourceKey: "User_id" });
+  }
 };

@@ -48,5 +48,10 @@ module.exports = class Regist extends Sequelize.Model {
       }
     );
   }
-  static associate(db) {}
+  static associate(db) {
+    db.Regist.belongsTo(db.User, {
+      foreignKey: "User_id",
+      targetKey: "User_id",
+    });
+  }
 };
