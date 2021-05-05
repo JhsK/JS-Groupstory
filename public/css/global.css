@@ -99,3 +99,11 @@ li {
   left: 680px;
   cursor: pointer;
 }
+
+.logout {
+  color: #000;
+}
+
+.joinAndLogin {
+  color: #057ae5;
+}
