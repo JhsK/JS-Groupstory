@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="백석대학교 동아리 소개 사이트" />
+        <meta name="keywords" content="백석대학교, 동아리" />
+        <title>데베삼겹살</title>
+    
+        <!-- 일반적인 fabicon 설정 -->
+        <link rel="icon" href="./image/favicon.png" />
+        <!-- 아이폰용 fabicon 설정 -->
+        <link rel="apple-touch-icon" href="./image/favicon.png" />
+        <!-- 인터넷 익스플러오용 fabicon 설정-->
+        <link rel="short icon" type="image/x-icon" href="./image/favicon.png" />
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+        <link rel="stylesheet" href="./css/reset.css">
+        <link rel="stylesheet" href="./css/requestList.css">
+        <link rel="stylesheet" href="./css/global.css">
+    </head>
+<body>
+    <header>
+        <div class="inner">
+            <div class="navContainer">
+                <i class="xi-search xi-2x searchBtn"></i>
+                <a href="/"><img src="./image/aaaa.png" alt="logo"></a>
+                <ul>
+                    <li>등록</li>
+                    <li>목록</li>
+                    <li><a href="/auth/logout" class="logout">로그아웃</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <section class="searchSection">
+        <form action="" class="searchForm">
+            <i class="xi-search xi-1x searchPlace"></i>
+            <i class="xi-close xi-1x searchClose"></i>
+            <input type="search" placeholder="원하는 동아리를 검색해보세요.">
+        </form>
+    </section>
+    <section class="warningSection">
+        <div class="inner">
+            <div class="warningMessageContainer">
+                <div class="wraningMessage">
+                    양식에 맞게 신청해주시면 검토를 통해 동아리 목록에 자동으로 추가됩니다.
+                </div>
+                <button><a href="/request/regist" class="logout">작성하기</a></button>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="inner">
+         <table>
+             <tbody>
+                 <tr class="list-header">
+                     <td>동아리명</td>
+                     <td>작성자</td>
+                     <td>상태</td>
+                 </tr>
+                 <tr>
+                     <td>EXIT</td>
+                     <td>테스트</td>
+                     <td>검토중</td>
+                 </tr>
+                 <tr>
+                     <td>삼겹살</td>
+                     <td>테스트</td>
+                     <td>검토중</td>
+                 </tr>
+             </tbody>
+         </table>
+        </div> 
+     </section>
+</body>
+</html>
