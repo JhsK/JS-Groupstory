@@ -1,5 +1,5 @@
 const express = require("express");
-const { isLoggedIn, isNotLoggedIn, mainLoggedIn } = require("./middlewares");
+const { isNotLoggedIn, mainLoggedIn } = require("./middlewares");
 const path = require("path");
 
 const router = express.Router();
@@ -15,10 +15,6 @@ router.get("/", mainLoggedIn, (req, res) => {
 
 router.get("/join", isNotLoggedIn, (req, res) => {
   res.sendFile(path.join(__dirname, "../html/join.html"));
-});
-
-router.get("/request", isLoggedIn, (req, res) => {
-  res.sendFile(path.join(__dirname, "../html/requestForm.html"));
 });
 
 module.exports = router;
