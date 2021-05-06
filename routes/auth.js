@@ -60,6 +60,7 @@ router.post("/request", isLoggedIn, async (req, res, next) => {
     Regist_member,
     Regist_info,
   } = req.body;
+  const fk = req.user.dataValues.User_id;
   try {
     const exRegist = await Regist.findOne({ where: { Regist_name } });
     if (exRegist) {
@@ -72,6 +73,7 @@ router.post("/request", isLoggedIn, async (req, res, next) => {
       Regist_member,
       Regist_info,
       Regist_enroll: "검토중",
+      User_id: fk,
     });
     return res.redirect("/");
   } catch (error) {
