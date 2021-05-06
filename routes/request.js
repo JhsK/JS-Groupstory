@@ -1,6 +1,7 @@
 const express = require("express");
-const { isLoggedIn, isNotLoggedIn, mainLoggedIn } = require("./middlewares");
+const { isLoggedIn } = require("./middlewares");
 const path = require("path");
+const Regist = require("../models/regist");
 
 const router = express.Router();
 
@@ -15,6 +16,20 @@ router.get("/", isLoggedIn, (req, res) => {
 
 router.get("/regist", isLoggedIn, (req, res) => {
   res.sendFile(path.join(__dirname, "../html/requestForm.html"));
+});
+
+router.get("/list", isLoggedIn, async (req, res, next) => {
+  try {
+    const RegistList = await Regist.findAll({
+      attributes: ["Regist_name", "User_id", "Regist_enroll"],
+    });
+    if (RegistList) {
+      return res.json(RegistList);
+    }
+  } catch (error) {
+    console.error(error);
+    return next(error);
+  }
 });
 
 module.exports = router;
