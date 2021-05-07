@@ -1,6 +1,5 @@
 const tbody = document.querySelector("tbody");
 
-const CreateTag = () => {};
 fetch("/request/list")
   .then((response) => {
     return response.json();
@@ -12,6 +11,7 @@ fetch("/request/list")
       const tdWriter = document.createElement("td");
       const tdEnroll = document.createElement("td");
 
+      tr.classList.add(`list`);
       tr.appendChild(tdCircle);
       tr.appendChild(tdWriter);
       tr.appendChild(tdEnroll);
@@ -22,4 +22,12 @@ fetch("/request/list")
       tdWriter.innerText = result[i].User_id;
       tdEnroll.innerText = result[i].Regist_enroll;
     }
+
+    const CircleList = document.querySelectorAll(".list");
+    Array.from(CircleList).forEach((item) => {
+      item.addEventListener("click", (e) => {
+        const query = e.target.childNodes[0].data;
+        location.href = `/request/detail/${query}`;
+      });
+    });
   });
