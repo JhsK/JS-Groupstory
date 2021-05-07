@@ -1,11 +1,34 @@
 const express = require("express");
 const passport = require("passport");
 const bcrypt = require("bcrypt");
+const multer = require("multer");
 const { isLoggedIn, isNotLoggedIn } = require("./middlewares");
 const User = require("../models/user");
 const Regist = require("../models/regist");
+const path = require("path");
+const fs = require("fs");
 
 const router = express.Router();
+
+try {
+  fs.readdirSync("uploads");
+} catch (error) {
+  console.error("uploads 폴더가 없어 uploads 폴더를 생성합니다.");
+  fs.mkdirSync("uploads");
+}
+
+const upload = multer({
+  storage: multer.diskStorage({
+    destination(req, file, cb) {
+      cb(null, "uploads/");
+    },
+    filename(req, file, cb) {
+      const ext = path.extname(file.originalname);
+      cb(null, path.basename(file.originalname, ext) + Date.now() + ext);
+    },
+  }),
+  limits: { fileSize: 5 * 1024 * 1024 },
+});
 
 router.post("/join", isNotLoggedIn, async (req, res, next) => {
   const { User_name, User_id, User_pw, User_dept } = req.body;
@@ -52,7 +75,13 @@ router.get("/logout", isLoggedIn, (req, res) => {
   res.redirect("/");
 });
 
-router.post("/request", isLoggedIn, async (req, res, next) => {
+router.post("/img", isLoggedIn, upload.single("img"), (req, res) => {
+  console.log(req.file);
+  res.json({ url: `/img/${req.file.filename}` });
+});
+
+const upload2 = multer();
+router.post("/request", isLoggedIn, upload2.none(), async (req, res, next) => {
   const {
     Regist_name,
     Regist_vicerepcon,
@@ -60,6 +89,7 @@ router.post("/request", isLoggedIn, async (req, res, next) => {
     Regist_member,
     Regist_info,
   } = req.body;
+  console.log(req.body.url);
   const fk = req.user.dataValues.User_id;
   try {
     const exRegist = await Regist.findOne({ where: { Regist_name } });
@@ -74,6 +104,7 @@ router.post("/request", isLoggedIn, async (req, res, next) => {
       Regist_info,
       Regist_enroll: "검토중",
       User_id: fk,
+      Regist_image: req.body.url,
     });
     return res.redirect("/");
   } catch (error) {
