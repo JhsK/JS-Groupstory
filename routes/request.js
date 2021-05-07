@@ -1,6 +1,8 @@
 const express = require("express");
+const multer = require("multer");
 const { isLoggedIn } = require("./middlewares");
 const path = require("path");
+const fs = require("fs");
 const Regist = require("../models/regist");
 
 const router = express.Router();
