@@ -37,7 +37,6 @@ router.get("/detail/:id", isLoggedIn, (req, res) => {
 });
 
 router.get("/load", isLoggedIn, async (req, res, next) => {
-  console.log(req.headers.referer);
   const requestUrl = req.headers.referer;
   const params = requestUrl.substring(37, requestUrl.length);
   try {
@@ -56,6 +55,31 @@ router.get("/load", isLoggedIn, async (req, res, next) => {
     if (RegistLoad) {
       return res.json(RegistLoad);
     }
+  } catch (error) {
+    console.error(error);
+    return next(error);
+  }
+});
+
+router.post("/state", isLoggedIn, async (req, res, next) => {
+  const { Regist_enroll } = req.body;
+  const requestUrl = req.headers.referer;
+  const params = requestUrl.substring(37, requestUrl.length);
+  try {
+    const exRegist = await Regist.findOne({ where: { Regist_name: params } });
+    if (exRegist) {
+      await Regist.update(
+        {
+          Regist_enroll,
+        },
+        {
+          where: {
+            Regist_name: params,
+          },
+        }
+      );
+    }
+    return res.redirect("/request");
   } catch (error) {
     console.error(error);
     return next(error);
