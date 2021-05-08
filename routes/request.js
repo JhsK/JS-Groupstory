@@ -69,6 +69,7 @@ router.get("/load", isLoggedIn, async (req, res, next) => {
         "Regist_repcon",
         "Regist_member",
         "Regist_info",
+        "Regist_image",
       ],
       where: {
         Regist_name: params,
