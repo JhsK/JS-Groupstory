@@ -25,7 +25,8 @@ module.exports = class User extends Sequelize.Model {
         },
         User_power: {
           type: Sequelize.BOOLEAN,
-          allowNull: true,
+          allowNull: false,
+          defaultValue: 0,
         },
         User_dept: {
           type: Sequelize.STRING(20),

@@ -43,6 +43,7 @@ router.post("/join", isNotLoggedIn, async (req, res, next) => {
       User_id,
       User_dept,
       User_pw: hash,
+      User_power: 0,
     });
     return res.redirect("/");
   } catch (error) {
