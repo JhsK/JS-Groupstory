@@ -25,6 +25,11 @@ section {
   margin: 0;
 }
 
+.cardListContent img {
+  height: 220px;
+  margin: 0;
+}
+
 .cardListText {
   padding: 0.8rem 0;
 }

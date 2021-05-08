@@ -1,6 +1,7 @@
 const express = require("express");
-const { isNotLoggedIn, mainLoggedIn } = require("./middlewares");
+const { isNotLoggedIn, mainLoggedIn, isLoggedIn } = require("./middlewares");
 const path = require("path");
+const Regist = require("../models/regist");
 
 const router = express.Router();
 
@@ -15,6 +16,50 @@ router.get("/", mainLoggedIn, (req, res) => {
 
 router.get("/join", isNotLoggedIn, (req, res) => {
   res.sendFile(path.join(__dirname, "../html/join.html"));
+});
+
+router.get("/main", isLoggedIn, async (req, res, next) => {
+  try {
+    const requestUrl = req.header.referer;
+    if (requestUrl) {
+      const params = requestUrl.substring(37, requestUrl.length);
+      const mainLoad = await Regist.findAll({
+        attributes: [
+          "Regist_name",
+          "Regist_vicerepcon",
+          "Regist_repcon",
+          "Regist_member",
+          "Regist_info",
+          "Regist_image",
+        ],
+        where: {
+          Regist_name: params,
+        },
+      });
+
+      if (mainLoad) {
+        return res.json(mainLoad);
+      }
+    } else {
+      const mainLoad = await Regist.findAll({
+        attributes: [
+          "Regist_name",
+          "Regist_vicerepcon",
+          "Regist_repcon",
+          "Regist_member",
+          "Regist_info",
+          "Regist_image",
+        ],
+      });
+
+      if (mainLoad) {
+        return res.json(mainLoad);
+      }
+    }
+  } catch (error) {
+    console.error(error);
+    return next(error);
+  }
 });
 
 module.exports = router;
