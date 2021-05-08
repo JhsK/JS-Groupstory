@@ -53,3 +53,9 @@ td {
   background-color: #9e9ba0;
   cursor: unset;
 }
+
+footer {
+  position: relative !important;
+  margin-top: 2rem !important;
+  padding-bottom: 0.5rem !important;
+}

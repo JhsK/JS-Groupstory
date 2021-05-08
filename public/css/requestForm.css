@@ -71,3 +71,7 @@
 a {
   color: #000;
 }
+
+footer {
+  position: relative !important;
+}
