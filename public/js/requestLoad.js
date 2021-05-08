@@ -3,6 +3,7 @@ const vicerepcon = document.querySelector("#Regist_vicerepcon");
 const repcon = document.querySelector("#Regist_repcon");
 const member = document.querySelector("#Regist_member");
 const info = document.querySelector("#Regist_info");
+const image = document.querySelector("#Regist_image");
 
 fetch("/request/load")
   .then((response) => {
@@ -15,4 +16,5 @@ fetch("/request/load")
     repcon.value = resultJson.Regist_repcon;
     member.value = resultJson.Regist_member;
     info.value = resultJson.Regist_info;
+    image.src = resultJson.Regist_image;
   });

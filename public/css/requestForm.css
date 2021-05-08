@@ -1,10 +1,8 @@
 .requestFormContainer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-77%, -50%);
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding-right: 10rem;
 }
 
 .requestFormTitle {
@@ -39,6 +37,12 @@
   outline: none;
   opacity: 0.5;
   border: 1px solid #000;
+}
+
+.requestForm img {
+  width: 300px;
+  height: 200px;
+  margin-bottom: 2rem;
 }
 
 .btnContainer {
