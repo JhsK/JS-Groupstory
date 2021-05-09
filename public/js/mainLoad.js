@@ -21,14 +21,17 @@ fetch("/main")
       cardListContainer.appendChild(divContent);
 
       img.src = result[i].Regist_image;
+      img.alt = result[i].Regist_name;
       divTitle.innerText = result[i].Regist_name;
     }
 
     const mainList = document.querySelectorAll(".cardListContent");
     Array.from(mainList).forEach((item) => {
       item.addEventListener("click", (e) => {
-        const query = e.target.childNodes[0].data;
-        location.href = `/${query}`;
+        const query =
+          e.target.localName === "img" ? e.target.alt : e.target.innerText;
+
+        location.href = `/circle/${query}`;
       });
     });
   });

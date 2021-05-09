@@ -10,6 +10,10 @@ router.use((req, res, next) => {
   next();
 });
 
+router.get("/circle/:id", isLoggedIn, (req, res) => {
+  res.sendFile(path.join(__dirname, "../html/circleDetail.html"));
+});
+
 router.get("/", mainLoggedIn, (req, res) => {
   res.sendFile(path.join(__dirname, "../html/main.html"));
 });
@@ -55,6 +59,33 @@ router.get("/main", isLoggedIn, async (req, res, next) => {
       if (mainLoad) {
         return res.json(mainLoad);
       }
+    }
+  } catch (error) {
+    console.error(error);
+    return next(error);
+  }
+});
+
+router.get("/circleLoad", isLoggedIn, async (req, res, next) => {
+  console.log(req.headers.referer);
+  const requestUrl = req.headers.referer;
+  const params = requestUrl.substring(29, requestUrl.length);
+  try {
+    const CircleDetailLoad = await Regist.findAll({
+      attributes: [
+        "Regist_name",
+        "Regist_vicerepcon",
+        "Regist_repcon",
+        "Regist_member",
+        "Regist_info",
+        "Regist_image",
+      ],
+      where: {
+        Regist_name: params,
+      },
+    });
+    if (CircleDetailLoad) {
+      return res.json(CircleDetailLoad);
     }
   } catch (error) {
     console.error(error);

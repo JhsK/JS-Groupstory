@@ -10,24 +10,24 @@
         <title>데베삼겹살</title>
     
         <!-- 일반적인 fabicon 설정 -->
-        <link rel="icon" href="./image/favicon.png" />
+        <link rel="icon" href="../image/favicon.png" />
         <!-- 아이폰용 fabicon 설정 -->
-        <link rel="apple-touch-icon" href="./image/favicon.png" />
+        <link rel="apple-touch-icon" href="../image/favicon.png" />
         <!-- 인터넷 익스플러오용 fabicon 설정-->
-        <link rel="short icon" type="image/x-icon" href="./image/favicon.png" />
+        <link rel="short icon" type="image/x-icon" href="../image/favicon.png" />
         <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
-        <link rel="stylesheet" href="./css/reset.css">
-        <link rel="stylesheet" href="./css/circleDetail.css">
-        <link rel="stylesheet" href="./css/global.css">
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/circleDetail.css">
+        <link rel="stylesheet" href="../css/global.css">
     </head>
 <body>
     <header>
         <div class="inner">
             <div class="navContainer">
                 <i class="xi-search xi-2x searchBtn"></i>
-                <a href="/"><img src="./image/aaaa.png" alt="logo"></a>
+                <a href="/"><img src="../image/aaaa.png" alt="logo"></a>
                 <ul>
-                    <li>등록</li>
+                    <li><a href="/request" class="logout">등록</a>
                     <li>목록</li>
                     <li><a href="/auth/logout" class="logout">로그아웃</a></li>
                 </ul>
@@ -45,21 +45,21 @@
         <div class="inner">
             <div class="circleContainer">
                 <div class="circleTitleContainer">
-                    <div class="circleTitle">
+                    <div class="circleTitle" id="Regist_name">
                         링크
                     </div>
                     <div class="circleDes">
-                        <span>회장: abc123</span>
-                        <span>부회장: abc123</span>
+                        <span id="Regist_vicerepcon">회장: abc123</span>
+                        <span id="Regist_repcon">부회장: abc123</span>
                     </div>
                     <div class="circleDes">
-                        <span>인원 수: 23명</span>
+                        <span id="Regist_member">인원 수: 23명</span>
                         <span>모집중</span>
                     </div>
                     <span class="manual">모집중이라면 회장 또는 부회장에게 연락으로 관심을 표하세요 !</span>
                 </div>
                 <div class="circleImgContainer">
-                    <img src="./image/c.jpg" alt="circle_img">
+                    <img src="" alt="circle_img" id="Regist_image">
                 </div>
             </div>
         </div>
@@ -67,7 +67,7 @@
     <section>
         <div class="inner">
             <div class="circleInfoContainer">
-                <div class="circleInfo">
+                <div class="circleInfo" id="Regist_info">
                     테스트
                 </div>
             </div>
@@ -76,6 +76,7 @@
     <footer>DB응용실무 (수 5,6) 데베삼겹살<br>
         20173162 임성규 20171774 나덕경 20171234 이유한
     </footer>
-    <script src="./js/search.js"></script>
+    <script src="../js/circleDetailLoad.js"></script>
+    <script src="../js/search.js"></script>
 </body>
 </html>
