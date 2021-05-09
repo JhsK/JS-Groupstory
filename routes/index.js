@@ -22,10 +22,6 @@ router.get("/join", isNotLoggedIn, (req, res) => {
   res.sendFile(path.join(__dirname, "../html/join.html"));
 });
 
-router.get("/search", isLoggedIn, (req, res) => {
-  res.sendFile(path.join(__dirname, "../html/search.html"));
-});
-
 router.get("/main", isLoggedIn, async (req, res, next) => {
   try {
     const requestUrl = req.header.referer;
@@ -71,7 +67,6 @@ router.get("/main", isLoggedIn, async (req, res, next) => {
 });
 
 router.get("/circleLoad", isLoggedIn, async (req, res, next) => {
-  console.log(req.headers.referer);
   const requestUrl = req.headers.referer;
   const params = requestUrl.substring(29, requestUrl.length);
   try {
