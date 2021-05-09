@@ -22,6 +22,10 @@ router.get("/join", isNotLoggedIn, (req, res) => {
   res.sendFile(path.join(__dirname, "../html/join.html"));
 });
 
+router.get("/search", isLoggedIn, (req, res) => {
+  res.sendFile(path.join(__dirname, "../html/search.html"));
+});
+
 router.get("/main", isLoggedIn, async (req, res, next) => {
   try {
     const requestUrl = req.header.referer;
