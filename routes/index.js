@@ -18,6 +18,10 @@ router.get("/", mainLoggedIn, (req, res) => {
   res.sendFile(path.join(__dirname, "../html/main.html"));
 });
 
+router.get("/email", isNotLoggedIn, (req, res) => {
+  res.sendFile(path.join(__dirname, "../html/email.html"));
+});
+
 router.get("/join", isNotLoggedIn, (req, res) => {
   res.sendFile(path.join(__dirname, "../html/join.html"));
 });

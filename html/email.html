@@ -26,22 +26,22 @@
             <div class="emailForm">
                 <img src="./image/aaaa.png" alt="logo">
                 <span class="emailInfo">백석대학교 학생 인증을 위해 백석대 이메일<br> 인증 후 회원가입이 가능합니다.</span>
-                <form action="" class="emailSend">
+                <form action="/auth/email" class="emailSend" method="POST">
                     <span class="formSpan">백석대학교 이메일</span>
                     <div>
-                        <input type="text">
+                        <input type="text" name="email">
                         <span>@bu.ac.kr</span>
                     </div>
                     <button type="submit">인증번호 받기</button>
                 </form>
-                <form action="" class="emailAuth">
+                <form action="/auth/authNum" class="emailAuth" method="POST">
                     <span class="formSpan">인증번호</span>
-                    <input type="text">
+                    <input type="number" name="reqAuthNum">
                     <button type="submit">인 증 하 기</button>
                 </form>
             </div>
             <div class="joinLink">
-                <span>계정이 있으신가요?</span><span><a href="./login.html">로그인하기</a></span>
+                <span>계정이 있으신가요?</span><span><a href="/">로그인하기</a></span>
             </div>
         </div>
     </div>

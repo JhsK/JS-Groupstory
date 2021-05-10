@@ -2,6 +2,7 @@ const express = require("express");
 const passport = require("passport");
 const bcrypt = require("bcrypt");
 const multer = require("multer");
+const nodemailer = require("nodemailer");
 const { isLoggedIn, isNotLoggedIn } = require("./middlewares");
 const User = require("../models/user");
 const Regist = require("../models/regist");
@@ -9,6 +10,8 @@ const path = require("path");
 const fs = require("fs");
 
 const router = express.Router();
+let authNum; // 이메일 인증번호
+let requestEmail; // 사용자 이메일 임시 저장소
 
 try {
   fs.readdirSync("uploads");
@@ -30,6 +33,46 @@ const upload = multer({
   limits: { fileSize: 5 * 1024 * 1024 },
 });
 
+router.post("/email", isNotLoggedIn, async (req, res, next) => {
+  authNum = Math.random().toString().substr(2, 6);
+  requestEmail = req.body.email + "@bu.ac.kr";
+
+  let transporter = nodemailer.createTransport({
+    service: "gmail",
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false,
+    auth: {
+      user: process.env.NODEMAILER_USER,
+      pass: process.env.NODEMAILER_PASS,
+    },
+  });
+
+  let mailOptions = await transporter.sendMail({
+    from: `곰방`,
+    to: requestEmail,
+    subject: "[데베삼겹살] 회원가입을 위한 인증번호를 입력해주세요",
+    html: `<h1>이메일 인증을 위해 하단의 번호를 입력해주세요</h1><br /><h3>${authNum}</h3>`,
+  });
+
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    }
+    console.log("Finish sending email : " + info.response);
+    transporter.close();
+    res.status(200);
+  });
+});
+
+router.post("/authNum", isNotLoggedIn, async (req, res) => {
+  if (authNum === req.body.reqAuthNum) {
+    res.redirect("/join");
+  } else {
+    res.redirect("/authNum?error=번호가 일치하지 않습니다.");
+  }
+});
+
 router.post("/join", isNotLoggedIn, async (req, res, next) => {
   const { User_name, User_id, User_pw, User_dept } = req.body;
   try {
@@ -44,7 +87,10 @@ router.post("/join", isNotLoggedIn, async (req, res, next) => {
       User_dept,
       User_pw: hash,
       User_power: 0,
+      User_email: requestEmail,
     });
+    authNum = undefined;
+    requestEmail = undefined;
     return res.redirect("/");
   } catch (error) {
     console.error(error);
