@@ -5,6 +5,7 @@ fetch("/main")
     return response.json();
   })
   .then((result) => {
+    console.log(result[0].Regist_image.img1);
     for (let i = 0; i < result.length; i++) {
       const divContent = document.createElement("div");
       const img = document.createElement("img");
@@ -20,7 +21,7 @@ fetch("/main")
       divContent.appendChild(divText);
       cardListContainer.appendChild(divContent);
 
-      img.src = result[i].Regist_image;
+      img.src = result[i].Regist_image.img1;
       img.alt = result[i].Regist_name;
       divTitle.innerText = result[i].Regist_name;
     }
