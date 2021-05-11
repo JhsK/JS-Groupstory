@@ -10,6 +10,10 @@ router.use((req, res, next) => {
   next();
 });
 
+router.get("/test", (req, res) => {
+  res.sendFile(path.join(__dirname, "../html/test.html"));
+});
+
 router.get("/circle/:id", isLoggedIn, (req, res) => {
   res.sendFile(path.join(__dirname, "../html/circleDetail.html"));
 });

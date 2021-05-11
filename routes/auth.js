@@ -122,8 +122,13 @@ router.get("/logout", isLoggedIn, (req, res) => {
   res.redirect("/");
 });
 
-router.post("/img", isLoggedIn, upload.single("img"), (req, res) => {
-  console.log(req.file);
+router.post("/img1", isLoggedIn, upload.single("img"), (req, res) => {
+  console.log(req.file, req.body);
+  res.json({ url: `/img/${req.file.filename}` });
+});
+
+router.post("/img2", isLoggedIn, upload.single("img"), (req, res) => {
+  console.log(req.file, req.body);
   res.json({ url: `/img/${req.file.filename}` });
 });
 
@@ -136,7 +141,12 @@ router.post("/request", isLoggedIn, upload2.none(), async (req, res, next) => {
     Regist_member,
     Regist_info,
   } = req.body;
-  console.log(req.body.url);
+
+  const imgJson = {
+    img1: req.body.url,
+    img2: req.body.url2,
+  };
+
   const fk = req.user.dataValues.User_id;
   try {
     const exRegist = await Regist.findOne({ where: { Regist_name } });
@@ -151,7 +161,7 @@ router.post("/request", isLoggedIn, upload2.none(), async (req, res, next) => {
       Regist_info,
       Regist_enroll: "검토중",
       User_id: fk,
-      Regist_image: req.body.url,
+      Regist_image: imgJson,
     });
     return res.redirect("/");
   } catch (error) {
