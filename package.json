@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app"
+    "start": "cross-env=production PORT=80 node server",
+    "dev": "nodemon app"
   },
   "author": "JhsK",
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^4.0.1",
     "cookie-parser": "^1.4.5",
+    "cross-env": "^7.0.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
