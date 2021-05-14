@@ -47,6 +47,7 @@ header {
   left: 0;
   background-color: #fff;
   border-bottom: 1px solid #dfdfdf;
+  z-index: 2;
 }
 
 .searchBtn {

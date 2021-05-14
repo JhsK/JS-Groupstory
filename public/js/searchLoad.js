@@ -19,7 +19,7 @@ fetch("/search/load")
     divContent.appendChild(divText);
     cardListContainer.appendChild(divContent);
 
-    img.src = result[0].Regist_image;
+    img.src = result[0].Regist_image.img1;
     img.alt = result[0].Regist_name;
     divTitle.innerText = result[0].Regist_name;
 

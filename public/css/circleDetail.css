@@ -53,31 +53,3 @@ section {
 .circleInfo {
   text-align: center;
 }
-
-.post-slider {
-  position: relative;
-}
-
-.post-slider .silder-title {
-  text-align: center;
-}
-
-.post-slider .next {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  font-size: 2em;
-  color: gray;
-  cursor: pointer;
-  z-index: 2;
-}
-
-.post-slider .prev {
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  font-size: 2em;
-  color: gray;
-  cursor: pointer;
-  z-index: 2;
-}
