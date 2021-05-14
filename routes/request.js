@@ -55,7 +55,11 @@ router.get("/list", isLoggedIn, async (req, res, next) => {
 });
 
 router.get("/detail/:id", isLoggedIn, (req, res) => {
-  res.sendFile(path.join(__dirname, "../html/requestDetail.html"));
+  if (res.locals.user.dataValues.User_power) {
+    res.sendFile(path.join(__dirname, "../html/requestDetail.html"));
+  } else {
+    res.redirect("/");
+  }
 });
 
 router.get("/load", isLoggedIn, async (req, res, next) => {
