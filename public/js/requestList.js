@@ -12,6 +12,7 @@ fetch("/request/list")
       const tdEnroll = document.createElement("td");
 
       tr.classList.add(`list`);
+      tdCircle.classList.add("query");
       tr.appendChild(tdCircle);
       tr.appendChild(tdWriter);
       tr.appendChild(tdEnroll);
@@ -23,10 +24,11 @@ fetch("/request/list")
       tdEnroll.innerText = result[i].Regist_enroll;
     }
 
+    const tdCircle = document.querySelector(".query");
     const CircleList = document.querySelectorAll(".list");
     Array.from(CircleList).forEach((item) => {
-      item.addEventListener("click", (e) => {
-        const query = e.target.childNodes[0].data;
+      item.addEventListener("click", () => {
+        const query = tdCircle.innerText;
         location.href = `/request/detail/${query}`;
       });
     });
