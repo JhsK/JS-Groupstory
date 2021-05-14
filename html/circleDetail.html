@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="ko">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="백석대학교 동아리 소개 사이트" />
-        <meta name="keywords" content="백석대학교, 동아리" />
-        <title>데베삼겹살</title>
-    
-        <!-- 일반적인 fabicon 설정 -->
-        <link rel="icon" href="../image/favicon.png" />
-        <!-- 아이폰용 fabicon 설정 -->
-        <link rel="apple-touch-icon" href="../image/favicon.png" />
-        <!-- 인터넷 익스플러오용 fabicon 설정-->
-        <link rel="short icon" type="image/x-icon" href="../image/favicon.png" />
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
-        <link rel="stylesheet" href="../css/reset.css">
-        <link rel="stylesheet" href="../css/circleDetail.css">
-        <link rel="stylesheet" href="../css/global.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="백석대학교 동아리 소개 사이트" />
+    <meta name="keywords" content="백석대학교, 동아리" />
+    <title>데베삼겹살</title>
+
+    <!-- 일반적인 fabicon 설정 -->
+    <link rel="icon" href="../image/favicon.png" />
+    <!-- 아이폰용 fabicon 설정 -->
+    <link rel="apple-touch-icon" href="../image/favicon.png" />
+    <!-- 인터넷 익스플러오용 fabicon 설정-->
+    <link rel="short icon" type="image/x-icon" href="../image/favicon.png" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/circleDetail.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/slick.css">
+    <link rel="stylesheet" href="../css/slick-theme.css">
+</head>
+
 <body>
     <header>
         <div class="inner">
@@ -59,7 +62,18 @@
                     <span class="manual">모집중이라면 회장 또는 부회장에게 연락으로 관심을 표하세요 !</span>
                 </div>
                 <div class="circleImgContainer">
-                    <img src="" alt="circle_img" id="Regist_image">
+                    <div class="post-slider">
+                        <i class="xi-angle-left xi-x prev"></i>
+                        <i class="xi-angle-right xi-x next"></i>
+                        <div class="post-wrapper">
+                            <div class="post">
+                                <img class="slider-image" id="Regist_image1">
+                            </div>
+                            <div class="post">
+                                <img class="slider-image" id="Regist_image2">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -76,7 +90,18 @@
     <footer>DB응용실무 (수 5,6) 데베삼겹살<br>
         20173162 임성규 20171774 나덕경 20171234 이유한
     </footer>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
     <script src="../js/circleDetailLoad.js"></script>
+    <script src="../js/slick.js"></script>
     <script src="../js/search.js"></script>
+    <script type="text/javascript">
+        $('.post-wrapper').slick({
+            nextArrow: $('.next'),
+            prevArrow: $('.prev'),
+            autoplay: true,
+            autoplaySpeed: 2000,
+        });
+    </script>
 </body>
+
 </html>
