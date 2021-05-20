@@ -18,7 +18,7 @@ module.exports = class Regist extends Sequelize.Model {
           allowNull: false,
         },
         Circle_image: {
-          type: Sequelize.STRING(100),
+          type: Sequelize.JSON,
           allowNull: false,
         },
         Circle_vicerepcon: {

@@ -105,6 +105,10 @@ router.post("/state", isLoggedIn, async (req, res, next) => {
           },
         }
       );
+
+      await Regist.destroy({
+        where: { Regist_enroll: "검토완료" },
+      });
     }
     return res.redirect("/request");
   } catch (error) {
