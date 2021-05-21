@@ -19,9 +19,9 @@ fetch("/search/load")
     divContent.appendChild(divText);
     cardListContainer.appendChild(divContent);
 
-    img.src = result[0].Regist_image.img1;
-    img.alt = result[0].Regist_name;
-    divTitle.innerText = result[0].Regist_name;
+    img.src = result[0].Circle_image.img1;
+    img.alt = result[0].Circle_name;
+    divTitle.innerText = result[0].Circle_name;
 
     const mainList = document.querySelectorAll(".cardListContent");
     Array.from(mainList).forEach((item) => {

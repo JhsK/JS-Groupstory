@@ -36,6 +36,11 @@ module.exports = class Regist extends Sequelize.Model {
           allowNull: false,
           defalutValue: "모집완료",
         },
+        Circle_registrant: {
+          type: Sequelize.STRING(30),
+          allowNull: false,
+          unique: true,
+        },
       },
       {
         sequelize,

@@ -1,7 +1,7 @@
 const express = require("express");
 const { isNotLoggedIn, mainLoggedIn, isLoggedIn } = require("./middlewares");
 const path = require("path");
-const Regist = require("../models/regist");
+const Circle = require("../models/circle");
 
 const router = express.Router();
 
@@ -31,17 +31,17 @@ router.get("/main", isLoggedIn, async (req, res, next) => {
     const requestUrl = req.header.referer;
     if (requestUrl) {
       const params = requestUrl.substring(37, requestUrl.length);
-      const mainLoad = await Regist.findAll({
+      const mainLoad = await Circle.findAll({
         attributes: [
-          "Regist_name",
-          "Regist_vicerepcon",
-          "Regist_repcon",
-          "Regist_member",
-          "Regist_info",
-          "Regist_image",
+          "Circle_name",
+          "Circle_vicerepcon",
+          "Circle_repcon",
+          "Circle_member",
+          "Circle_info",
+          "Circle_image",
         ],
         where: {
-          Regist_name: params,
+          Circle_name: params,
         },
       });
 
@@ -49,14 +49,14 @@ router.get("/main", isLoggedIn, async (req, res, next) => {
         return res.json(mainLoad);
       }
     } else {
-      const mainLoad = await Regist.findAll({
+      const mainLoad = await Circle.findAll({
         attributes: [
-          "Regist_name",
-          "Regist_vicerepcon",
-          "Regist_repcon",
-          "Regist_member",
-          "Regist_info",
-          "Regist_image",
+          "Circle_name",
+          "Circle_vicerepcon",
+          "Circle_repcon",
+          "Circle_member",
+          "Circle_info",
+          "Circle_image",
         ],
       });
 
@@ -74,17 +74,17 @@ router.get("/circleLoad", isLoggedIn, async (req, res, next) => {
   const requestUrl = req.headers.referer;
   const params = requestUrl.substring(29, requestUrl.length);
   try {
-    const CircleDetailLoad = await Regist.findAll({
+    const CircleDetailLoad = await Circle.findAll({
       attributes: [
-        "Regist_name",
-        "Regist_vicerepcon",
-        "Regist_repcon",
-        "Regist_member",
-        "Regist_info",
-        "Regist_image",
+        "Circle_name",
+        "Circle_vicerepcon",
+        "Circle_repcon",
+        "Circle_member",
+        "Circle_info",
+        "Circle_image",
       ],
       where: {
-        Regist_name: params,
+        Circle_name: params,
       },
     });
     if (CircleDetailLoad) {

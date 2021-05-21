@@ -1,7 +1,7 @@
 const express = require("express");
 const { isNotLoggedIn, mainLoggedIn, isLoggedIn } = require("./middlewares");
 const path = require("path");
-const Regist = require("../models/regist");
+const Circle = require("../models/circle");
 
 const router = express.Router();
 
@@ -9,17 +9,17 @@ router.get("/load", isLoggedIn, async (req, res, next) => {
   const requestUrl = req.headers.referer;
   const params = requestUrl.substring(29, requestUrl.length - 1);
   try {
-    const searchLoad = await Regist.findAll({
+    const searchLoad = await Circle.findAll({
       attributes: [
-        "Regist_name",
-        "Regist_vicerepcon",
-        "Regist_repcon",
-        "Regist_member",
-        "Regist_info",
-        "Regist_image",
+        "Circle_name",
+        "Circle_vicerepcon",
+        "Circle_repcon",
+        "Circle_member",
+        "Circle_info",
+        "Circle_image",
       ],
       where: {
-        Regist_name: params,
+        Circle_name: params,
       },
     });
     if (searchLoad) {
@@ -34,4 +34,5 @@ router.get("/load", isLoggedIn, async (req, res, next) => {
 router.get("/:id", isLoggedIn, (req, res) => {
   res.sendFile(path.join(__dirname, "../html/search.html"));
 });
+
 module.exports = router;
