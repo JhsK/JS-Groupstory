@@ -4,6 +4,7 @@ const { isLoggedIn } = require("./middlewares");
 const path = require("path");
 const fs = require("fs");
 const Regist = require("../models/regist");
+const db = require("../models");
 
 const router = express.Router();
 
@@ -106,9 +107,16 @@ router.post("/state", isLoggedIn, async (req, res, next) => {
         }
       );
 
-      await Regist.destroy({
-        where: { Regist_enroll: "검토완료" },
-      });
+      // await db.sequelize
+      //   .query("call myTest()")
+      //   .then(function (response) {
+      //     res.json(response);
+      //   })
+      //   .error(function (err) {
+      //     res.json(err);
+      //   });
+
+      const result = await db.sequelize.query("call myTest()");
     }
     return res.redirect("/request");
   } catch (error) {
