@@ -5,6 +5,7 @@ const session = require("express-session");
 const dotenv = require("dotenv");
 const passport = require("passport");
 const path = require("path");
+const nunjucks = require("nunjucks");
 const helmet = require("helmet");
 const hpp = require("hpp");
 const redis = require("redis");
@@ -26,6 +27,13 @@ const logger = require("./logger");
 const app = express();
 passportConfig();
 app.set("port", process.env.PORT || 3001);
+app.set("view engine", "html");
+
+nunjucks.configure("html", {
+  express: app,
+  watch: true,
+});
+
 sequelize
   .sync({ force: false })
   .then(() => {
