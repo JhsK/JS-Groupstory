@@ -25,11 +25,23 @@ section {
 
 .circleDes {
   margin-bottom: 2rem;
+  display: flex;
 }
 
 .circleDes span {
   font-size: 1.2rem;
   margin-right: 3rem;
+}
+
+.circleDes form {
+  font-size: 1.2rem;
+  margin-right: 3rem;
+}
+
+.circleDes button {
+  border: none;
+  background-color: #b3ebf9;
+  cursor: pointer;
 }
 
 .circleImgContainer {

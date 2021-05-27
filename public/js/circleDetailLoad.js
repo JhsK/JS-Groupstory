@@ -5,6 +5,7 @@ const circleMember = document.querySelector("#Circle_member");
 const circleInfo = document.querySelector("#Circle_info");
 const circleImage1 = document.querySelector("#Circle_image1");
 const circleImage2 = document.querySelector("#Circle_image2");
+const circleRecruit = document.querySelector("#Circle_recurit");
 
 fetch("/circleLoad")
   .then((response) => {
@@ -20,4 +21,5 @@ fetch("/circleLoad")
     circleInfo.innerText = resultJson.Circle_info;
     circleImage1.src = resultJson.Circle_image.img1;
     circleImage2.src = resultJson.Circle_image.img2;
+    circleRecruit.innerText = resultJson.Circle_recruit;
   });

@@ -57,7 +57,18 @@
                     </div>
                     <div class="circleDes">
                         <span id="Circle_member">인원 수: 23명</span>
-                        <span>모집중</span>
+                        {% if updateAuth %}
+                        <form action="/recruitUpdate" method="POST">
+                            <span id="Circle_recurit">모집중</span>
+                            <select name="Circle_recruit">
+                                <option value="모집중">모집중</option>
+                                <option value="모집완료">모집완료</option>
+                            </select>
+                            <button type="submit">상태 변경</button>
+                        </form>
+                        {% else %}
+                        <span id="Circle_recruit">모집중</span>
+                        {% endif %}
                     </div>
                     <span class="manual">모집중이라면 회장 또는 부회장에게 연락으로 관심을 표하세요 !</span>
                 </div>

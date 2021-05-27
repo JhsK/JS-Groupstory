@@ -23,11 +23,13 @@ router.get("/circle/:id", isLoggedIn, async (req, res) => {
     const writer = JSON.parse(JSON.stringify(exWrite)).Circle_registrant;
 
     if (res.locals.user.dataValues.User_id === writer) {
-      res.sendFile(path.join(__dirname, "../html/circleDetail.html"));
+      res.render("circleDetail", { updateAuth: true });
+    } else {
+      res.render("circleDetail", { updateAuth: false });
     }
 
-    console.log(res.locals.user.dataValues.User_id);
-    res.sendFile(path.join(__dirname, "../html/circleDetail.html"));
+    // console.log(res.locals.user.dataValues.User_id);
+    // res.sendFile(path.join(__dirname, "../html/circleDetail.html"));
   } catch (error) {
     console.error(error);
     return next(error);
@@ -102,6 +104,7 @@ router.get("/circleLoad", isLoggedIn, async (req, res, next) => {
         "Circle_member",
         "Circle_info",
         "Circle_image",
+        "Circle_recruit",
       ],
       where: {
         Circle_name: params,
@@ -110,6 +113,31 @@ router.get("/circleLoad", isLoggedIn, async (req, res, next) => {
     if (CircleDetailLoad) {
       return res.json(CircleDetailLoad);
     }
+  } catch (error) {
+    console.error(error);
+    return next(error);
+  }
+});
+
+router.post("/recruitUpdate", isLoggedIn, async (req, res, next) => {
+  const { Circle_recruit } = req.body;
+  const requestUrl = req.headers.referer;
+  const params = requestUrl.substring(29, requestUrl.length);
+
+  try {
+    if (Circle_recruit) {
+      await Circle.update(
+        {
+          Circle_recruit,
+        },
+        {
+          where: {
+            Circle_name: params,
+          },
+        }
+      );
+    }
+    return res.redirect(requestUrl);
   } catch (error) {
     console.error(error);
     return next(error);
