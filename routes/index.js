@@ -10,8 +10,28 @@ router.use((req, res, next) => {
   next();
 });
 
-router.get("/circle/:id", isLoggedIn, (req, res) => {
-  res.sendFile(path.join(__dirname, "../html/circleDetail.html"));
+router.get("/circle/:id", isLoggedIn, async (req, res) => {
+  try {
+    const requestParams = req.params.id;
+    const exWrite = await Circle.findOne({
+      attributes: ["Circle_registrant"],
+      where: {
+        Circle_name: requestParams,
+      },
+    });
+
+    const writer = JSON.parse(JSON.stringify(exWrite)).Circle_registrant;
+
+    if (res.locals.user.dataValues.User_id === writer) {
+      res.sendFile(path.join(__dirname, "../html/circleDetail.html"));
+    }
+
+    console.log(res.locals.user.dataValues.User_id);
+    res.sendFile(path.join(__dirname, "../html/circleDetail.html"));
+  } catch (error) {
+    console.error(error);
+    return next(error);
+  }
 });
 
 router.get("/", mainLoggedIn, (req, res) => {

@@ -59,7 +59,7 @@ router.get("/detail/:id", isLoggedIn, (req, res) => {
   if (res.locals.user.dataValues.User_power) {
     res.sendFile(path.join(__dirname, "../html/requestDetail.html"));
   } else {
-    res.redirect("/");
+    res.redirect("/request");
   }
 });
 
@@ -80,6 +80,8 @@ router.get("/load", isLoggedIn, async (req, res, next) => {
         Regist_name: params,
       },
     });
+
+    console.log("test!!!!!!!!!!" + RegistLoad);
     if (RegistLoad) {
       return res.json(RegistLoad);
     }
@@ -106,15 +108,6 @@ router.post("/state", isLoggedIn, async (req, res, next) => {
           },
         }
       );
-
-      // await db.sequelize
-      //   .query("call myTest()")
-      //   .then(function (response) {
-      //     res.json(response);
-      //   })
-      //   .error(function (err) {
-      //     res.json(err);
-      //   });
 
       const result = await db.sequelize.query("call myTest()");
     }
