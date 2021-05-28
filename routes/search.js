@@ -17,6 +17,7 @@ router.get("/load", isLoggedIn, async (req, res, next) => {
         "Circle_member",
         "Circle_info",
         "Circle_image",
+        "Circle_recruit",
       ],
       where: {
         Circle_name: params,
