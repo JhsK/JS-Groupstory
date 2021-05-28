@@ -61,6 +61,7 @@ router.get("/main", isLoggedIn, async (req, res, next) => {
           "Circle_member",
           "Circle_info",
           "Circle_image",
+          "Circle_recruit",
         ],
         where: {
           Circle_name: params,
@@ -79,6 +80,7 @@ router.get("/main", isLoggedIn, async (req, res, next) => {
           "Circle_member",
           "Circle_info",
           "Circle_image",
+          "Circle_recruit",
         ],
       });
 

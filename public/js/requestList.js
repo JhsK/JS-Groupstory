@@ -24,11 +24,12 @@ fetch("/request/list")
       tdEnroll.innerText = result[i].Regist_enroll;
     }
 
-    const tdCircle = document.querySelector(".query");
+    const tdCircle = document.querySelectorAll(".query");
     const CircleList = document.querySelectorAll(".list");
-    Array.from(CircleList).forEach((item) => {
+    Array.from(CircleList).forEach((item, i) => {
       item.addEventListener("click", () => {
-        const query = tdCircle.innerText;
+        const query = tdCircle[i].innerText;
+        console.log(query);
         location.href = `/request/detail/${query}`;
       });
     });
