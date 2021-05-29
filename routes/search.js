@@ -23,7 +23,8 @@ router.get("/load", isLoggedIn, async (req, res, next) => {
         Circle_name: params,
       },
     });
-    if (searchLoad) {
+    if (searchLoad.length > 0) {
+      console.log("test");
       return res.json(searchLoad);
     }
   } catch (error) {

@@ -94,6 +94,7 @@ router.get("/load", isLoggedIn, async (req, res, next) => {
 router.post("/state", isLoggedIn, async (req, res, next) => {
   const { Regist_enroll } = req.body;
   const requestUrl = req.headers.referer;
+  console.log("test!!!!!" + Regist_enroll);
   const params = requestUrl.substring(37, requestUrl.length);
   try {
     const exRegist = await Regist.findOne({ where: { Regist_name: params } });
