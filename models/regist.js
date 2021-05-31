@@ -14,7 +14,7 @@ module.exports = class Regist extends Sequelize.Model {
           allowNull: false,
         },
         Regist_info: {
-          type: Sequelize.STRING(200),
+          type: Sequelize.TEXT,
           allowNull: false,
         },
         Regist_image: {
@@ -43,8 +43,8 @@ module.exports = class Regist extends Sequelize.Model {
         modelName: "Regist",
         tableName: "Regist",
         paranoid: false,
-        charset: "utf8",
-        collate: "utf8_general_ci",
+        charset: "utf8mb4",
+        collate: "utf8mb4_general_ci",
       }
     );
   }

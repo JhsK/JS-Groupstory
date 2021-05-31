@@ -54,8 +54,9 @@ td {
   cursor: unset;
 }
 
-/* footer {
-  position: relative !important;
-  margin-top: 2rem !important;
-  padding-bottom: 0.5rem !important;
-} */
+footer {
+  position: absolute !important;
+  left: 50% !important;
+  bottom: 5% !important;
+  transform: translateX(-50%) !important;
+}

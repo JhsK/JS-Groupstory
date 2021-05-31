@@ -56,3 +56,10 @@ section {
   margin-right: 0.5rem;
   color: #3a68f9;
 }
+
+footer {
+  position: absolute !important;
+  left: 50% !important;
+  bottom: 5% !important;
+  transform: translateX(-50%) !important;
+}
