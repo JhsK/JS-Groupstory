@@ -23,18 +23,30 @@ router.get("/load", isLoggedIn, async (req, res, next) => {
         Circle_name: params,
       },
     });
-    if (searchLoad.length > 0) {
-      console.log("test");
-      return res.json(searchLoad);
-    }
+
+    return res.json(searchLoad);
   } catch (error) {
     console.error(error);
     return next(error);
   }
 });
 
-router.get("/:id", isLoggedIn, (req, res) => {
-  res.sendFile(path.join(__dirname, "../html/search.html"));
+router.get("/:id", isLoggedIn, async (req, res) => {
+  const requestUrl = req._parsedUrl.pathname;
+  const params = requestUrl.substring(1, requestUrl.length);
+  console.log(params);
+  try {
+    const searchBool = await Circle.findOne({ where: { Circle_name: params } });
+
+    if (searchBool) {
+      return res.sendFile(path.join(__dirname, "../html/search.html"));
+    } else {
+      return res.sendFile(path.join(__dirname, "../html/searchFalse.html"));
+    }
+  } catch (error) {
+    console.error(error);
+    return next(error);
+  }
 });
 
 module.exports = router;
