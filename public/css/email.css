@@ -75,3 +75,10 @@ form {
   color: #fff;
   cursor: pointer;
 }
+
+footer {
+  position: absolute !important;
+  left: 50% !important;
+  bottom: 5% !important;
+  transform: translateX(-50%) !important;
+}
