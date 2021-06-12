@@ -12,6 +12,7 @@ fetch("/request/load")
   })
   .then((result) => {
     const resultJson = result[0];
+    console.log(resultJson);
     name.value = resultJson.Regist_name;
     vicerepcon.value = resultJson.Regist_vicerepcon;
     repcon.value = resultJson.Regist_repcon;

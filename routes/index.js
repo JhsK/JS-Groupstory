@@ -96,7 +96,13 @@ router.get("/main", isLoggedIn, async (req, res, next) => {
 
 router.get("/circleLoad", isLoggedIn, async (req, res, next) => {
   const requestUrl = req.headers.referer;
-  const params = requestUrl.substring(29, requestUrl.length);
+  let params = requestUrl.substring(29, requestUrl.length);
+  let paramDecoded;
+
+  if (params.indexOf("%") >= 0) {
+    paramDecoded = decodeURIComponent(params);
+    params = paramDecoded;
+  }
   try {
     const CircleDetailLoad = await Circle.findAll({
       attributes: [

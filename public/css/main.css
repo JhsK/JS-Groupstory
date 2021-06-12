@@ -29,6 +29,7 @@ section {
 .cardListContent img {
   height: 220px;
   margin: 0;
+  width: 100%;
 }
 
 .cardListText {

@@ -49,7 +49,7 @@ router.post("/email", isNotLoggedIn, async (req, res, next) => {
   });
 
   let mailOptions = await transporter.sendMail({
-    from: `곰방`,
+    from: `데베삼겹살`,
     to: requestEmail,
     subject: "[데베삼겹살] 회원가입을 위한 인증번호를 입력해주세요",
     html: `<h1>이메일 인증을 위해 하단의 번호를 입력해주세요</h1><br /><h3>${authNum}</h3>`,

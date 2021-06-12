@@ -65,7 +65,15 @@ router.get("/detail/:id", isLoggedIn, (req, res) => {
 
 router.get("/load", isLoggedIn, async (req, res, next) => {
   const requestUrl = req.headers.referer;
-  const params = requestUrl.substring(37, requestUrl.length);
+  let params = requestUrl.substring(37, requestUrl.length);
+  let paramDecoded;
+
+  if (params.indexOf("%") >= 0) {
+    paramDecoded = decodeURIComponent(params);
+    params = paramDecoded;
+  }
+
+  console.log(params);
   try {
     const RegistLoad = await Regist.findAll({
       attributes: [
@@ -81,7 +89,6 @@ router.get("/load", isLoggedIn, async (req, res, next) => {
       },
     });
 
-    console.log("test!!!!!!!!!!" + RegistLoad);
     if (RegistLoad) {
       return res.json(RegistLoad);
     }
@@ -94,8 +101,13 @@ router.get("/load", isLoggedIn, async (req, res, next) => {
 router.post("/state", isLoggedIn, async (req, res, next) => {
   const { Regist_enroll } = req.body;
   const requestUrl = req.headers.referer;
-  console.log("test!!!!!" + Regist_enroll);
-  const params = requestUrl.substring(37, requestUrl.length);
+  let params = requestUrl.substring(37, requestUrl.length);
+  let paramDecoded;
+
+  if (params.indexOf("%") >= 0) {
+    paramDecoded = decodeURIComponent(params);
+    params = paramDecoded;
+  }
   try {
     const exRegist = await Regist.findOne({ where: { Regist_name: params } });
     if (exRegist) {
@@ -110,7 +122,7 @@ router.post("/state", isLoggedIn, async (req, res, next) => {
         }
       );
 
-      const result = await db.sequelize.query("call myTest()");
+      const result = await db.sequelize.query("call autoCircle()");
     }
     return res.redirect("/request");
   } catch (error) {
