@@ -15,3 +15,8 @@
 
 ## 프로젝트에서 사용한 스택
 <img src=/public/image/stack.png width=700px height=450px></img>
+
+<br>
+
+## 시연영상
+https://youtu.be/vtK6cW5VWWk
