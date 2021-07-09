@@ -18,5 +18,10 @@
 
 <br>
 
+## 문서화 자료 (화면 설계, DB 설계, 기능)
+[https://www.notion.so/difunto/Groupstroy-a1c73326a127486f8d097e974556e605]()
+
+<br>
+
 ## 시연영상
 https://youtu.be/vtK6cW5VWWk
